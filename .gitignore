@@ -6,3 +6,6 @@ package-lock.json
 
 # dist folder
 dist/
+
+# build folder
+build/

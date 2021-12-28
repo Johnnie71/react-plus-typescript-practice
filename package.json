@@ -1,7 +1,7 @@
 {
 	"name": "react-plus-typescript",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Typescript React app built with Webpack and Babel",
 	"main": "index.js",
 	"scripts": {
 		"webpack": "webpack",

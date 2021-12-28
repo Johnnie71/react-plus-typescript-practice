@@ -5,8 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"webpack": "webpack",
-		"build": "webpack --mode production",
-		"start": "webpack-dev-server --open --mode development"
+		"build": "npm run type-check && webpack --mode production",
+		"start": "webpack-dev-server --open --mode development",
+		"type-check": "tsc"
 	},
 	"keywords": [],
 	"author": "",

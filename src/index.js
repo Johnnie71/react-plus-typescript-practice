@@ -4,5 +4,5 @@ import ReactDom from "react-dom";
 const HelloWorld = () => {
 	return <h1>Hello World!</h1>;
 };
-
+alert("hello World!");
 ReactDom.render(<HelloWorld />, document.getElementById("root"));

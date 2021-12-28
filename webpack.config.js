@@ -1,8 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractorPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-	entry: "./src/index.tsx",
+	entry: path.join(__dirname, "src", "index.tsx"),
 	output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
 	devtool: "eval-source-map",
 	mode: process.env.NODE_ENV || "development",
@@ -24,7 +25,7 @@ module.exports = {
 			},
 			{
 				test: /\.(css|scss)$/,
-				use: ["style-loader", "css-loader"],
+				use: [MiniCssExtractorPlugin, { loader: "css-loader" }],
 			},
 			{
 				test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
@@ -35,6 +36,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, "src", "index.html"),
+			filename: "index.html",
 		}),
+		new MiniCssExtractorPlugin(),
 	],
 };
